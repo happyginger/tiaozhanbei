@@ -1,0 +1,816 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V5.40.0.51500/W32 for ARM              04/Oct/2014  20:13:06 #
+# Copyright (C) 2007-2009 IAR Systems AB.                                     #
+#                                                                             #
+#    Output file  =  D:\http_canvas_html5\Debug\Exe\app.hex                   #
+#    Map file     =  D:\http_canvas_html5\Debug\List\app.map                  #
+#    Command line =  D:\http_canvas_html5\Debug\Obj\DHT11.o                   #
+#                    D:\http_canvas_html5\Debug\Obj\SPI2.o                    #
+#                    D:\http_canvas_html5\Debug\Obj\base64.o                  #
+#                    D:\http_canvas_html5\Debug\Obj\core_cm3.o                #
+#                    D:\http_canvas_html5\Debug\Obj\device.o                  #
+#                    D:\http_canvas_html5\Debug\Obj\httpd.o                   #
+#                    D:\http_canvas_html5\Debug\Obj\httputil.o                #
+#                    D:\http_canvas_html5\Debug\Obj\iic.o                     #
+#                    D:\http_canvas_html5\Debug\Obj\main.o                    #
+#                    D:\http_canvas_html5\Debug\Obj\mcu_init.o                #
+#                    D:\http_canvas_html5\Debug\Obj\md5.o                     #
+#                    D:\http_canvas_html5\Debug\Obj\misc.o                    #
+#                    D:\http_canvas_html5\Debug\Obj\sha1.o                    #
+#                    D:\http_canvas_html5\Debug\Obj\socket.o                  #
+#                    D:\http_canvas_html5\Debug\Obj\startup_stm32f10x_hd.o    #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_bkp.o           #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_exti.o          #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_flash.o         #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_gpio.o          #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_i2c.o           #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_it.o            #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_rcc.o           #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_spi.o           #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_tim.o           #
+#                    D:\http_canvas_html5\Debug\Obj\stm32f10x_usart.o         #
+#                    D:\http_canvas_html5\Debug\Obj\system_stm32f10x.o        #
+#                    D:\http_canvas_html5\Debug\Obj\util.o                    #
+#                    D:\http_canvas_html5\Debug\Obj\w5500.o                   #
+#                    D:\http_canvas_html5\Debug\Obj\webpage.o                 #
+#                    D:\http_canvas_html5\Debug\Obj\websocket.o               #
+#                    D:\http_canvas_html5\Debug\Obj\weibo.o -o                #
+#                    D:\http_canvas_html5\Debug\Exe\app.hex --map             #
+#                    D:\http_canvas_html5\Debug\List\app.map --config         #
+#                    D:\http_canvas_html5\app.icf --semihosting --entry       #
+#                    __iar_program_start                                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__endian      = little
+__thumb_aware = enabled
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x0803ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x2000bfff] {
+          rw, block CSTACK, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x130
+  .intvec            ro code  0x08000000   0x130  startup_stm32f10x_hd.o [1]
+                            - 0x08000130   0x130
+
+"P1":                                     0x77f0
+  .rodata            const    0x08000130  0x1704  webpage.o [1]
+  .text              ro code  0x08001834   0xc92  xprintffull.o [3]
+  .text              ro code  0x080024c8   0xa7c  httputil.o [1]
+  .text              ro code  0x08002f44   0x570  w5500.o [1]
+  .text              ro code  0x080034b4   0x424  websocket.o [1]
+  .text              ro code  0x080038d8   0x3da  socket.o [1]
+  .text              ro code  0x08003cb4   0x3a8  sha1.o [1]
+  .text              ro code  0x0800405c   0x368  stm32f10x_rcc.o [1]
+  .text              ro code  0x080043c4   0x2a8  httpd.o [1]
+  .text              ro code  0x0800466c   0x246  DblDiv.o [4]
+  .text              ro code  0x080048b4   0x20c  mcu_init.o [1]
+  .text              ro code  0x08004ac0   0x1d0  stm32f10x_flash.o [1]
+  .text              ro code  0x08004c90   0x1d0  util.o [1]
+  .text              ro code  0x08004e60   0x1cc  weibo.o [1]
+  .text              ro code  0x0800502c   0x1a2  DblMul.o [4]
+  .text              ro code  0x080051d0   0x18c  stm32f10x_usart.o [1]
+  .text              ro code  0x0800535c   0x17e  DblSub.o [4]
+  .rodata            const    0x080054dc   0x17c  httputil.o [1]
+  .text              ro code  0x08005658   0x176  stm32f10x_gpio.o [1]
+  .text              ro code  0x080057d0   0x170  device.o [1]
+  .text              ro code  0x08005940   0x16c  stm32f10x_i2c.o [1]
+  .rodata            const    0x08005aac   0x15c  weibo.o [1]
+  .text              ro code  0x08005c08   0x158  system_stm32f10x.o [1]
+  .text              ro code  0x08005d60   0x12e  I64DivMod.o [4]
+  .text              ro code  0x08005e90   0x12c  stm32f10x_tim.o [1]
+  .text              ro code  0x08005fbc   0x10c  xdscale.o [3]
+  .text              ro code  0x080060c8   0x108  stm32f10x_it.o [1]
+  .text              ro code  0x080061d0    0xfc  base64.o [1]
+  .text              ro code  0x080062cc    0xec  DHT11.o [1]
+  .text              ro code  0x080063b8    0xe6  DblAdd.o [4]
+  .rodata            const    0x080064a0    0xd4  httputil.o [1]
+  .text              ro code  0x08006574    0xd4  main.o [1]
+  .text              ro code  0x08006648    0xb8  SPI2.o [1]
+  .text              ro code  0x08006700    0xb4  xdnorm.o [3]
+  .text              ro code  0x080067b4    0xa4  misc.o [1]
+  .rodata            const    0x08006858    0x8c  weibo.o [1]
+  .text              ro code  0x080068e4    0x88  iic.o [1]
+  .text              ro code  0x0800696c    0x80  stm32f10x_spi.o [1]
+  .rodata            const    0x080069ec    0x78  httputil.o [1]
+  .text              ro code  0x08006a64    0x70  ABImemcpy.o [4]
+  .text              ro code  0x08006ad4    0x6c  strncpy.o [4]
+  .rodata            const    0x08006b40    0x68  websocket.o [1]
+  .text              ro code  0x08006ba8    0x66  ABImemset.o [4]
+  .text              ro code  0x08006c10    0x58  memchr.o [4]
+  .text              ro code  0x08006c68    0x56  DblToI32.o [4]
+  .rodata            const    0x08006cc0    0x50  httpd.o [1]
+  .text              ro code  0x08006d10    0x4c  strtok.o [3]
+  .rodata            const    0x08006d5c    0x44  base64.o [1]
+  .rodata            const    0x08006da0    0x44  httpd.o [1]
+  .rodata            const    0x08006de4    0x44  httputil.o [1]
+  .text              ro code  0x08006e28    0x44  strcpy.o [4]
+  .text              ro code  0x08006e6c    0x42  strcmp.o [4]
+  .rodata            const    0x08006eb0    0x3c  httpd.o [1]
+  .rodata            const    0x08006eec    0x3c  httpd.o [1]
+  .rodata            const    0x08006f28    0x3c  httpd.o [1]
+  .rodata            const    0x08006f64    0x3c  httpd.o [1]
+  .rodata            const    0x08006fa0    0x3c  httpd.o [1]
+  .text              ro code  0x08006fdc    0x38  ABImemset48.o [4]
+  .text              ro code  0x08007014    0x36  strlen.o [4]
+  .text              ro code  0x0800704c    0x30  sprintf.o [3]
+  .text              ro code  0x0800707c    0x30  strstr.o [3]
+  .text              ro code  0x080070ac    0x2e  DblCmpLe.o [4]
+  .text              ro code  0x080070dc    0x2e  DblCmpGe.o [4]
+  .text              ro code  0x0800710c    0x2e  I32ToDbl.o [4]
+  .rodata            const    0x0800713c    0x2c  httputil.o [1]
+  .rodata            const    0x08007168    0x2c  websocket.o [1]
+  .rodata            const    0x08007194    0x28  websocket.o [1]
+  .rodata            const    0x080071bc    0x24  httputil.o [1]
+  .rodata            const    0x080071e0    0x24  httputil.o [1]
+  .text              ro code  0x08007204    0x24  copy_init2.o [4]
+  .text              ro code  0x08007228    0x22  strcspn.o [3]
+  .text              ro code  0x0800724a    0x22  strspn.o [3]
+  .iar.init_table    const    0x0800726c    0x24  - Linker created -
+  .rodata            const    0x08007290    0x20  main.o [1]
+  .rodata            const    0x080072b0    0x20  w5500.o [1]
+  .rodata            const    0x080072d0    0x20  w5500.o [1]
+  .rodata            const    0x080072f0    0x20  weibo.o [1]
+  .rodata            const    0x08007310    0x20  weibo.o [1]
+  .rodata            const    0x08007330    0x20  weibo.o [1]
+  .rodata            const    0x08007350    0x20  weibo.o [1]
+  .text              ro code  0x08007370    0x20  printf.o [3]
+  .text              ro code  0x08007390    0x20  data_init2.o [4]
+  .text              ro code  0x080073b0    0x1e  strcat.o [3]
+  .rodata            const    0x080073d0    0x1c  websocket.o [1]
+  .text              ro code  0x080073ec    0x1c  iarwstd.o [5]
+  .text              ro code  0x08007408    0x1a  zero_init2.o [4]
+  .rodata            const    0x08007424    0x18  httputil.o [1]
+  .rodata            const    0x0800743c    0x18  w5500.o [1]
+  .rodata            const    0x08007454    0x18  websocket.o [1]
+  .text              ro code  0x0800746c    0x18  cmain.o [4]
+  .text              ro code  0x08007484    0x16  strchr.o [4]
+  .text              ro code  0x0800749a    0x16  httpd.o [1]
+  .text              ro code  0x080074b0    0x16  httputil.o [1]
+  .text              ro code  0x080074c6    0x16  xprout.o [3]
+  .rodata            const    0x080074dc    0x14  device.o [1]
+  .rodata            const    0x080074f0    0x14  device.o [1]
+  .rodata            const    0x08007504    0x14  device.o [1]
+  .rodata            const    0x08007518    0x14  httpd.o [1]
+  .rodata            const    0x0800752c    0x14  httputil.o [1]
+  .rodata            const    0x08007540    0x14  httputil.o [1]
+  .rodata            const    0x08007554    0x14  main.o [1]
+  .rodata            const    0x08007568    0x14  main.o [1]
+  .rodata            const    0x0800757c    0x14  socket.o [1]
+  .rodata            const    0x08007590    0x14  websocket.o [1]
+  .text              ro code  0x080075a4    0x14  exit.o [5]
+  .rodata            const    0x080075b8    0x10  httputil.o [1]
+  .rodata            const    0x080075c8    0x10  httputil.o [1]
+  .rodata            const    0x080075d8    0x10  httputil.o [1]
+  .rodata            const    0x080075e8    0x10  sha1.o [1]
+  .rodata            const    0x080075f8    0x10  weibo.o [1]
+  .rodata            const    0x08007608    0x10  weibo.o [1]
+  .text              ro code  0x08007618    0x10  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007628    0x10  httpd.o [1]
+  .text              ro code  0x08007638     0xe  div.o [3]
+  .rodata            const    0x08007648     0xc  httputil.o [1]
+  .rodata            const    0x08007654     0xc  httputil.o [1]
+  .rodata            const    0x08007660     0xc  httputil.o [1]
+  .rodata            const    0x0800766c     0xc  httputil.o [1]
+  .rodata            const    0x08007678     0xc  httputil.o [1]
+  .rodata            const    0x08007684     0xc  httputil.o [1]
+  .rodata            const    0x08007690     0xc  httputil.o [1]
+  .rodata            const    0x0800769c     0xc  httputil.o [1]
+  .rodata            const    0x080076a8     0xc  httputil.o [1]
+  .rodata            const    0x080076b4     0xc  httputil.o [1]
+  .rodata            const    0x080076c0     0xc  httputil.o [1]
+  .rodata            const    0x080076cc     0xc  httputil.o [1]
+  .rodata            const    0x080076d8     0xc  httputil.o [1]
+  .rodata            const    0x080076e4     0xc  websocket.o [1]
+  .rodata            const    0x080076f0     0xc  websocket.o [1]
+  .rodata            const    0x080076fc     0xc  websocket.o [1]
+  .rodata            const    0x08007708     0xc  weibo.o [1]
+  .rodata            const    0x08007714     0xc  weibo.o [1]
+  .text              ro code  0x08007720     0xc  stm32f10x_exti.o [1]
+  .text              ro code  0x0800772c     0xa  cexit.o [4]
+  .text              ro code  0x08007736     0xa  xsprout.o [3]
+  .rodata            const    0x08007740     0x8  device.o [1]
+  .rodata            const    0x08007748     0x8  httpd.o [1]
+  .rodata            const    0x08007750     0x8  httpd.o [1]
+  .rodata            const    0x08007758     0x8  httpd.o [1]
+  .rodata            const    0x08007760     0x8  httpd.o [1]
+  .rodata            const    0x08007768     0x8  httpd.o [1]
+  .rodata            const    0x08007770     0x8  httputil.o [1]
+  .rodata            const    0x08007778     0x8  httputil.o [1]
+  .rodata            const    0x08007780     0x8  httputil.o [1]
+  .rodata            const    0x08007788     0x8  httputil.o [1]
+  .rodata            const    0x08007790     0x8  socket.o [1]
+  .rodata            const    0x08007798     0x8  websocket.o [1]
+  .rodata            const    0x080077a0     0x8  weibo.o [1]
+  .rodata            const    0x080077a8     0x8  weibo.o [1]
+  .rodata            const    0x080077b0     0x8  xprintffull.o [3]
+  .text              ro code  0x080077b8     0x6  ABImemclr4.o [4]
+  .text              ro code  0x080077be     0x6  exit.o [3]
+  .rodata            const    0x080077c4     0x4  device.o [1]
+  .rodata            const    0x080077c8     0x4  device.o [1]
+  .rodata            const    0x080077cc     0x4  device.o [1]
+  .rodata            const    0x080077d0     0x4  httputil.o [1]
+  .text              ro code  0x080077d4     0x2  I64DivZer.o [4]
+  .text              ro code  0x080077d6     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077da     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077de     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077e2     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077e6     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077ea     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077ee     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077f2     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077f6     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077fa     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080077fe     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007802     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007806     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800780a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800780e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007812     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007816     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800781a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800781e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007822     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007826     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800782a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800782e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007832     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007836     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800783a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800783e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007842     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007846     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800784a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800784e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007852     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007856     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800785a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800785e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007862     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007866     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800786a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800786e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007872     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007876     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800787a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800787e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007882     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007886     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800788a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800788e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007892     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x08007896     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800789a     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x0800789e     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078a2     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078a6     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078aa     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078ae     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078b2     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078b6     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078ba     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078be     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078c2     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078c6     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078ca     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078ce     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078d2     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078d6     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078da     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078de     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078e2     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078e6     0x4  startup_stm32f10x_hd.o [1]
+  .text              ro code  0x080078ea     0x4  low_level_init.o [3]
+  .rodata            const    0x080078ee     0x1  strtok.o [3]
+  Initializer bytes  ro data  0x080078f0    0x30  <for P2 s0>
+                            - 0x08007920  0x77f0
+
+"P2", part 1 of 3:                         0x800
+  CSTACK                      0x20000000   0x800  <Block>
+    CSTACK           uninit   0x20000000   0x800  <Block tail>
+                            - 0x20000800   0x800
+
+"P2", part 2 of 3:                        0x8dbc
+  .bss               zero     0x20000800  0x6000  main.o [1]
+  .bss               zero     0x20006800   0x800  websocket.o [1]
+  .bss               zero     0x20007000   0x800  websocket.o [1]
+  .bss               zero     0x20007800   0x800  weibo.o [1]
+  .bss               zero     0x20008000   0x5b4  device.o [1]
+  .bss               zero     0x200085b4   0x5b4  httpd.o [1]
+  .bss               zero     0x20008b68   0x5b4  httpd.o [1]
+  .bss               zero     0x2000911c   0x400  weibo.o [1]
+  .bss               zero     0x2000951c    0x40  httputil.o [1]
+  .bss               zero     0x2000955c    0x24  device.o [1]
+  .bss               zero     0x20009580    0x10  w5500.o [1]
+  .bss               zero     0x20009590    0x10  w5500.o [1]
+  .bss               zero     0x200095a0     0x4  main.o [1]
+  .bss               zero     0x200095a4     0x4  main.o [1]
+  .bss               zero     0x200095a8     0x4  main.o [1]
+  .bss               zero     0x200095ac     0x4  iarwstd.o [5]
+  .bss               zero     0x200095b0     0x2  socket.o [1]
+  .bss               zero     0x200095b2     0x2  websocket.o [1]
+  .bss               zero     0x200095b4     0x2  websocket.o [1]
+  .bss               zero     0x200095b6     0x1  main.o [1]
+  .bss               zero     0x200095b7     0x1  main.o [1]
+  .bss               zero     0x200095b8     0x1  main.o [1]
+  .bss               zero     0x200095b9     0x1  main.o [1]
+  .bss               zero     0x200095ba     0x1  main.o [1]
+  .bss               zero     0x200095bb     0x1  websocket.o [1]
+                            - 0x200095bc  0x8dbc
+
+"P2", part 3 of 3:                          0x30
+  P2 s0                       0x200095bc    0x30  <Init block>
+    .data            inited   0x200095bc    0x10  stm32f10x_rcc.o [1]
+    .data            inited   0x200095cc     0x8  device.o [1]
+    .data            inited   0x200095d4     0x8  device.o [1]
+    .data            inited   0x200095dc     0x4  stm32f10x_rcc.o [1]
+    .data            inited   0x200095e0     0x4  weibo.o [1]
+    .data            inited   0x200095e4     0x4  weibo.o [1]
+    .data            inited   0x200095e8     0x4  strtok.o [3]
+                            - 0x200095ec    0x30
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init2)
+    1 destination range, total size 0x8dbc:
+          0x20000800  0x8dbc
+
+Copy (__iar_copy_init2)
+    1 source range, total size 0x30 (100% of destination):
+          0x080078f0    0x30
+    1 destination range, total size 0x30:
+          0x200095bc    0x30
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+D:\http_canvas_html5\Debug\Obj: [1]
+    DHT11.o                     236
+    SPI2.o                      184
+    base64.o                    252       68
+    device.o                    368       96    1 512
+    httpd.o                     718      508    2 920
+    httputil.o                2 706    1 200       64
+    iic.o                       136
+    main.o                      212       72   24 593
+    mcu_init.o                  524
+    misc.o                      164
+    sha1.o                      936       16
+    socket.o                    986       28        2
+    startup_stm32f10x_hd.o      596
+    stm32f10x_exti.o             12
+    stm32f10x_flash.o           464
+    stm32f10x_gpio.o            374
+    stm32f10x_i2c.o             364
+    stm32f10x_it.o              264
+    stm32f10x_rcc.o             872       20       20
+    stm32f10x_spi.o             128
+    stm32f10x_tim.o             300
+    stm32f10x_usart.o           396
+    system_stm32f10x.o          344
+    util.o                      464
+    w5500.o                   1 392       88       32
+    webpage.o                          5 892
+    websocket.o               1 060      304    4 101
+    weibo.o                     460      696    3 080
+    -------------------------------------------------
+    Total:                   14 912    8 988   36 324
+
+command line: [2]
+    -------------------------------------------------
+    Total:
+
+dl7M_tl_in.a: [3]
+    div.o                        14
+    exit.o                        6
+    low_level_init.o              4
+    printf.o                     32
+    sprintf.o                    48
+    strcat.o                     30
+    strcspn.o                    34
+    strspn.o                     34
+    strstr.o                     48
+    strtok.o                     76        5        4
+    xdnorm.o                    180
+    xdscale.o                   268
+    xprintffull.o             3 218        8
+    xprout.o                     22
+    xsprout.o                    10
+    -------------------------------------------------
+    Total:                    4 024       13        4
+
+rt7M_tl.a: [4]
+    ABImemclr4.o                  6
+    ABImemcpy.o                 112
+    ABImemset.o                 102
+    ABImemset48.o                56
+    DblAdd.o                    230
+    DblCmpGe.o                   46
+    DblCmpLe.o                   46
+    DblDiv.o                    582
+    DblMul.o                    418
+    DblSub.o                    382
+    DblToI32.o                   86
+    I32ToDbl.o                   46
+    I64DivMod.o                 302
+    I64DivZer.o                   2
+    cexit.o                      10
+    cmain.o                      24
+    copy_init2.o                 36
+    data_init2.o                 32
+    memchr.o                     88
+    strchr.o                     22
+    strcmp.o                     66
+    strcpy.o                     68
+    strlen.o                     54
+    strncpy.o                   108
+    zero_init2.o                 26
+    -------------------------------------------------
+    Total:                    2 950
+
+shb_l.a: [5]
+    exit.o                       20
+    iarwstd.o                    28                 4
+    -------------------------------------------------
+    Total:                       48                 4
+
+    Gaps                         20       16
+    Linker created                        37    2 048
+-----------------------------------------------------
+    Grand Total:             21 954    9 054   38 380
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+ADC1_2_IRQHandler       0x08007843          Code  Wk  startup_stm32f10x_hd.o [1]
+ADC3_IRQHandler         0x080078b7          Code  Wk  startup_stm32f10x_hd.o [1]
+ADCPrescTable           0x200095dc     0x4  Data  Lc  stm32f10x_rcc.o [1]
+APBAHBPrescTable        0x200095bc    0x10  Data  Lc  stm32f10x_rcc.o [1]
+ATOI                    0x08004d0d    0x28  Code  Gb  util.o [1]
+ATOI32                  0x08004d35    0x26  Code  Gb  util.o [1]
+BUFPUB                  0x20008000   0x5b4  Data  Gb  device.o [1]
+BusFault_Handler        0x080060cf     0x2  Code  Gb  stm32f10x_it.o [1]
+C2D                     0x08004d79    0x3a  Code  Gb  util.o [1]
+CAN1_RX1_IRQHandler     0x0800784f          Code  Wk  startup_stm32f10x_hd.o [1]
+CAN1_SCE_IRQHandler     0x08007853          Code  Wk  startup_stm32f10x_hd.o [1]
+CSTACK$$Base            0x20000000           --   Gb  - Linker created -
+CSTACK$$Limit           0x20000800           --   Gb  - Linker created -
+ConfigMsg               0x2000955c    0x24  Data  Gb  device.o [1]
+DHT11_GetValue          0x08006321    0x92  Code  Gb  DHT11.o [1]
+DHT11_ReadData          0x080062cd    0x54  Code  Gb  DHT11.o [1]
+DMA1_Channel1_IRQHandler
+                        0x08007827          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA1_Channel2_IRQHandler
+                        0x0800782b          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA1_Channel3_IRQHandler
+                        0x0800782f          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA1_Channel4_IRQHandler
+                        0x08007833          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA1_Channel5_IRQHandler
+                        0x08007837          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA1_Channel6_IRQHandler
+                        0x0800783b          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA1_Channel7_IRQHandler
+                        0x0800783f          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA2_Channel1_IRQHandler
+                        0x080078db          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA2_Channel2_IRQHandler
+                        0x080078df          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA2_Channel3_IRQHandler
+                        0x080078e3          Code  Wk  startup_stm32f10x_hd.o [1]
+DMA2_Channel4_5_IRQHandler
+                        0x080078e7          Code  Wk  startup_stm32f10x_hd.o [1]
+DebugMon_Handler        0x080060d5     0x2  Code  Gb  stm32f10x_it.o [1]
+EXTI0_IRQHandler        0x08006101    0xd0  Code  Gb  stm32f10x_it.o [1]
+EXTI15_10_IRQHandler    0x0800789b          Code  Wk  startup_stm32f10x_hd.o [1]
+EXTI1_IRQHandler        0x08007817          Code  Wk  startup_stm32f10x_hd.o [1]
+EXTI2_IRQHandler        0x0800781b          Code  Wk  startup_stm32f10x_hd.o [1]
+EXTI3_IRQHandler        0x0800781f          Code  Wk  startup_stm32f10x_hd.o [1]
+EXTI4_IRQHandler        0x08007823          Code  Wk  startup_stm32f10x_hd.o [1]
+EXTI9_5_IRQHandler      0x08007857          Code  Wk  startup_stm32f10x_hd.o [1]
+EXTI_ClearITPendingBit  0x08007721     0x6  Code  Gb  stm32f10x_exti.o [1]
+FLASH_ClearFlag         0x08004c1d     0x6  Code  Gb  stm32f10x_flash.o [1]
+FLASH_ErasePage         0x08004b25    0x64  Code  Gb  stm32f10x_flash.o [1]
+FLASH_GetBank1Status    0x08004c23    0x36  Code  Gb  stm32f10x_flash.o [1]
+FLASH_IRQHandler        0x0800780b          Code  Wk  startup_stm32f10x_hd.o [1]
+FLASH_Lock              0x08004b11    0x12  Code  Gb  stm32f10x_flash.o [1]
+FLASH_PrefetchBufferCmd
+                        0x08004adb    0x20  Code  Gb  stm32f10x_flash.o [1]
+FLASH_ProgramWord       0x08004b89    0x82  Code  Gb  stm32f10x_flash.o [1]
+FLASH_SetLatency        0x08004ac1    0x1a  Code  Gb  stm32f10x_flash.o [1]
+FLASH_Unlock            0x08004afb    0x12  Code  Gb  stm32f10x_flash.o [1]
+FLASH_WaitForLastOperation
+                        0x08004c61    0x30  Code  Gb  stm32f10x_flash.o [1]
+FSMC_IRQHandler         0x080078bb          Code  Wk  startup_stm32f10x_hd.o [1]
+GPIO_Configuration      0x080048b5    0xec  Code  Gb  mcu_init.o [1]
+GPIO_Init               0x08005659   0x150  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ReadInputDataBit   0x080057a9    0x1a  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ResetBits          0x080057c9     0x6  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_SetBits            0x080057c3     0x6  Code  Gb  stm32f10x_gpio.o [1]
+HardFault_Handler       0x080060cb     0x2  Code  Gb  stm32f10x_it.o [1]
+I2C1_ER_IRQHandler      0x0800787b          Code  Wk  startup_stm32f10x_hd.o [1]
+I2C1_EV_IRQHandler      0x08007877          Code  Wk  startup_stm32f10x_hd.o [1]
+I2C2_ER_IRQHandler      0x08007883          Code  Wk  startup_stm32f10x_hd.o [1]
+I2C2_EV_IRQHandler      0x0800787f          Code  Wk  startup_stm32f10x_hd.o [1]
+I2C_AcknowledgeConfig   0x08005a91    0x1c  Code  Gb  stm32f10x_i2c.o [1]
+I2C_Cmd                 0x08005a75    0x1c  Code  Gb  stm32f10x_i2c.o [1]
+I2C_DeInit              0x08005941    0x3c  Code  Gb  stm32f10x_i2c.o [1]
+I2C_Init                0x0800597d    0xf8  Code  Gb  stm32f10x_i2c.o [1]
+IINCHIP_CSoff           0x08002f4f     0xa  Code  Gb  w5500.o [1]
+IINCHIP_CSon            0x08002f59     0xa  Code  Gb  w5500.o [1]
+IINCHIP_READ            0x08002fa5    0x36  Code  Gb  w5500.o [1]
+IINCHIP_SpiSendData     0x08002f63     0xe  Code  Gb  w5500.o [1]
+IINCHIP_WRITE           0x08002f71    0x34  Code  Gb  w5500.o [1]
+INDEX_HTML              0x08000130  0x1704  Data  Gb  webpage.o [1]
+JPEGBuffer              0x20000800  0x6000  Data  Gb  main.o [1]
+JPEGCnt                 0x200095a8     0x4  Data  Gb  main.o [1]
+MemManage_Handler       0x080060cd     0x2  Code  Gb  stm32f10x_it.o [1]
+NMI_Handler             0x080060c9     0x2  Code  Gb  stm32f10x_it.o [1]
+NVIC_Configuration      0x08004a25    0x52  Code  Gb  mcu_init.o [1]
+NVIC_Init               0x080067c5    0x78  Code  Gb  misc.o [1]
+NVIC_PriorityGroupConfig
+                        0x080067b5    0x10  Code  Gb  misc.o [1]
+NVIC_SetVectorTable     0x08006845    0x14  Code  Gb  misc.o [1]
+PVD_IRQHandler          0x080077ff          Code  Wk  startup_stm32f10x_hd.o [1]
+PendSV_Handler          0x080060d7     0x2  Code  Gb  stm32f10x_it.o [1]
+RCC_ADCCLKConfig        0x080041e1    0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB1PeriphClockCmd  0x08004315    0x24  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB1PeriphResetCmd  0x08004339    0x24  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x080042f1    0x24  Code  Gb  stm32f10x_rcc.o [1]
+RCC_Configuration       0x080049a1    0x84  Code  Gb  mcu_init.o [1]
+RCC_DeInit              0x0800405d    0x60  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetClocksFreq       0x080041f9    0xf4  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetFlagStatus       0x0800435d    0x56  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetSYSCLKSource     0x08004193     0xa  Code  Gb  stm32f10x_rcc.o [1]
+RCC_HCLKConfig          0x0800419d    0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_HSEConfig           0x080040bd    0x54  Code  Gb  stm32f10x_rcc.o [1]
+RCC_IRQHandler          0x0800780f          Code  Wk  startup_stm32f10x_hd.o [1]
+RCC_PCLK1Config         0x080041b3    0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PCLK2Config         0x080041c9    0x18  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLLCmd              0x08004171     0xc  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLLConfig           0x08004155    0x1a  Code  Gb  stm32f10x_rcc.o [1]
+RCC_SYSCLKConfig        0x0800417d    0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_WaitForHSEStartUp   0x08004111    0x44  Code  Gb  stm32f10x_rcc.o [1]
+RSIZE                   0x20009590    0x10  Data  Lc  w5500.o [1]
+RTCAlarm_IRQHandler     0x0800789f          Code  Wk  startup_stm32f10x_hd.o [1]
+RTC_IRQHandler          0x08007807          Code  Wk  startup_stm32f10x_hd.o [1]
+Region$$Table$$Base     0x0800726c           --   Gb  - Linker created -
+Region$$Table$$Limit    0x08007290           --   Gb  - Linker created -
+Reset_Handler           0x08007619          Code  Wk  startup_stm32f10x_hd.o [1]
+Reset_W5500             0x080057d1    0x28  Code  Gb  device.o [1]
+SDIO_IRQHandler         0x080078bf          Code  Wk  startup_stm32f10x_hd.o [1]
+SHA1Input               0x08003d17    0x6e  Code  Gb  sha1.o [1]
+SHA1PadMessage          0x08003fb5    0xa8  Code  Gb  sha1.o [1]
+SHA1ProcessMessageBlock
+                        0x08003d85   0x230  Code  Gb  sha1.o [1]
+SHA1Reset               0x08003cb5    0x40  Code  Gb  sha1.o [1]
+SHA1Result              0x08003cf5    0x22  Code  Gb  sha1.o [1]
+SPI1_IRQHandler         0x08007887          Code  Wk  startup_stm32f10x_hd.o [1]
+SPI2_IRQHandler         0x0800788b          Code  Wk  startup_stm32f10x_hd.o [1]
+SPI2_SendByte           0x080066c9    0x32  Code  Gb  SPI2.o [1]
+SPI3_IRQHandler         0x080078c7          Code  Wk  startup_stm32f10x_hd.o [1]
+SPI_Cmd                 0x080069af    0x1c  Code  Gb  stm32f10x_spi.o [1]
+SPI_I2S_GetFlagStatus   0x080069d3    0x1a  Code  Gb  stm32f10x_spi.o [1]
+SPI_I2S_ReceiveData     0x080069cf     0x4  Code  Gb  stm32f10x_spi.o [1]
+SPI_I2S_SendData        0x080069cb     0x4  Code  Gb  stm32f10x_spi.o [1]
+SPI_Init                0x0800696d    0x42  Code  Gb  stm32f10x_spi.o [1]
+SSIZE                   0x20009580    0x10  Data  Lc  w5500.o [1]
+SVC_Handler             0x080060d3     0x2  Code  Gb  stm32f10x_it.o [1]
+SetSysClock             0x08005c6d     0x8  Code  Lc  system_stm32f10x.o [1]
+SetSysClockTo72         0x08005c75    0xe4  Code  Lc  system_stm32f10x.o [1]
+SysTick_Handler         0x080060d9     0x2  Code  Gb  stm32f10x_it.o [1]
+SystemInit              0x08005c09    0x64  Code  Gb  system_stm32f10x.o [1]
+TAMPER_IRQHandler       0x08007803          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM1_BRK_IRQHandler     0x0800785b          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM1_CC_IRQHandler      0x08007867          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM1_TRG_COM_IRQHandler
+                        0x08007863          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM1_UP_IRQHandler      0x0800785f          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM2_IRQHandler         0x080060db    0x20  Code  Gb  stm32f10x_it.o [1]
+TIM3_IRQHandler         0x080060fb     0x2  Code  Gb  stm32f10x_it.o [1]
+TIM4_IRQHandler         0x08007873          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM5_IRQHandler         0x080078c3          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM6_IRQHandler         0x080078d3          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM7_IRQHandler         0x080078d7          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM8_BRK_IRQHandler     0x080078a7          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM8_CC_IRQHandler      0x080078b3          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM8_TRG_COM_IRQHandler
+                        0x080078af          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM8_UP_IRQHandler      0x080078ab          Code  Wk  startup_stm32f10x_hd.o [1]
+TIM_ClearITPendingBit   0x08005fa1     0x8  Code  Gb  stm32f10x_tim.o [1]
+TIM_Cmd                 0x08005f31    0x1c  Code  Gb  stm32f10x_tim.o [1]
+TIM_GetITStatus         0x08005f69    0x38  Code  Gb  stm32f10x_tim.o [1]
+TIM_ITConfig            0x08005f4d    0x16  Code  Gb  stm32f10x_tim.o [1]
+TIM_PrescalerConfig     0x08005f63     0x6  Code  Gb  stm32f10x_tim.o [1]
+TIM_TimeBaseInit        0x08005e91    0x8c  Code  Gb  stm32f10x_tim.o [1]
+Timer2_ISR              0x080065c5    0x84  Code  Gb  main.o [1]
+Timer_Configuration     0x08004a77    0x4a  Code  Gb  mcu_init.o [1]
+UART4_IRQHandler        0x080078cb          Code  Wk  startup_stm32f10x_hd.o [1]
+UART5_IRQHandler        0x080078cf          Code  Wk  startup_stm32f10x_hd.o [1]
+USART1_IRQHandler       0x080060fd     0x2  Code  Gb  stm32f10x_it.o [1]
+USART1_Init             0x080057f9    0x4c  Code  Gb  device.o [1]
+USART2_IRQHandler       0x080060ff     0x2  Code  Gb  stm32f10x_it.o [1]
+USART3_IRQHandler       0x08007897          Code  Wk  startup_stm32f10x_hd.o [1]
+USART_Cmd               0x080052b9    0x1c  Code  Gb  stm32f10x_usart.o [1]
+USART_GetFlagStatus     0x0800533b    0x22  Code  Gb  stm32f10x_usart.o [1]
+USART_ITConfig          0x080052d5    0x5e  Code  Gb  stm32f10x_usart.o [1]
+USART_Init              0x080051d1    0xe2  Code  Gb  stm32f10x_usart.o [1]
+USART_SendData          0x08005333     0x8  Code  Gb  stm32f10x_usart.o [1]
+USBWakeUp_IRQHandler    0x080078a3          Code  Wk  startup_stm32f10x_hd.o [1]
+USB_HP_CAN1_TX_IRQHandler
+                        0x08007847          Code  Wk  startup_stm32f10x_hd.o [1]
+USB_LP_CAN1_RX0_IRQHandler
+                        0x0800784b          Code  Wk  startup_stm32f10x_hd.o [1]
+UsageFault_Handler      0x080060d1     0x2  Code  Gb  stm32f10x_it.o [1]
+WIZ_CS                  0x0800669d    0x2c  Code  Gb  SPI2.o [1]
+WIZ_SPI_Init            0x08006649    0x52  Code  Gb  SPI2.o [1]
+WWDG_IRQHandler         0x080077fb          Code  Wk  startup_stm32f10x_hd.o [1]
+_GenldDefault           0x0800224d   0x248  Code  Lc  xprintffull.o [3]
+_LdtobDefault           0x08001e35   0x418  Code  Lc  xprintffull.o [3]
+_LitobDefault           0x08001d29   0x10c  Code  Lc  xprintffull.o [3]
+_Printf                 0x08001835   0x4f4  Code  Gb  xprintffull.o [3]
+_Prout                  0x080074c7    0x16  Code  Gb  xprout.o [3]
+_PutcharsDefault        0x08002495    0x32  Code  Lc  xprintffull.o [3]
+_SProut                 0x08007737     0xa  Code  Gb  xsprout.o [3]
+_Strtok_ssave           0x200095e8     0x4  Data  Lc  strtok.o [3]
+__aeabi_cdcmple         0x080070ad          Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x080070dd          Code  Gb  DblCmpGe.o [4]
+__aeabi_d2iz            0x08006c69          Code  Gb  DblToI32.o [4]
+__aeabi_d2uiz           0x08006c95          Code  Gb  DblToI32.o [4]
+__aeabi_dadd            0x080063b9          Code  Gb  DblAdd.o [4]
+__aeabi_ddiv            0x0800466d          Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x0800502d          Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x0800535d          Code  Gb  DblSub.o [4]
+__aeabi_i2d             0x0800710d          Code  Gb  I32ToDbl.o [4]
+__aeabi_ldiv0           0x080077d5          Code  Gb  I64DivZer.o [4]
+__aeabi_ldivmod         0x08005d61          Code  Gb  I64DivMod.o [4]
+__aeabi_memclr4         0x080077b9          Code  Gb  ABImemclr4.o [4]
+__aeabi_memcpy          0x08006a65          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x08006a7f          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x08006a7f          Code  Gb  ABImemcpy.o [4]
+__aeabi_memset          0x08006ba9          Code  Gb  ABImemset.o [4]
+__aeabi_memset4         0x08006fdd          Code  Gb  ABImemset48.o [4]
+__aeabi_memset8         0x08006fdd          Code  Gb  ABImemset48.o [4]
+__aeabi_ui2d            0x08007121          Code  Gb  I32ToDbl.o [4]
+__aeabi_uldivmod        0x08005d75          Code  Gb  I64DivMod.o [4]
+__exit                  0x080075a5    0x14  Code  Gb  exit.o [5]
+__iar_Dnorm             0x08006701    0xb4  Code  Gb  xdnorm.o [3]
+__iar_Dscale            0x08005fbd   0x10c  Code  Gb  xdscale.o [3]
+__iar_Memchr            0x08006c11          Code  Gb  memchr.o [4]
+__iar_Memset            0x08006ba9          Code  Gb  ABImemset.o [4]
+__iar_Memset4_word      0x08006fe5          Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word      0x08006fe5          Code  Gb  ABImemset48.o [4]
+__iar_Memset_word       0x08006bb1          Code  Gb  ABImemset.o [4]
+__iar_Strchr            0x08007485          Code  Gb  strchr.o [4]
+__iar_Strstr            0x0800707d    0x30  Code  Gb  strstr.o [3]
+__iar_copy_init2        0x08007205    0x24  Code  Gb  copy_init2.o [4]
+__iar_d2uiz             0x08006c9f          Code  Gb  DblToI32.o [4]
+__iar_dadd              0x080063cb          Code  Gb  DblAdd.o [4]
+__iar_data_init2        0x08007391    0x20  Code  Gb  data_init2.o [4]
+__iar_dsub              0x0800536f          Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x08005381          Code  Gb  DblSub.o [4]
+__iar_program_start     0x0800746d          Code  Gb  cmain.o [4]
+__iar_sh_stdout_close   0x080073ed    0x16  Code  Gb  iarwstd.o [5]
+__iar_sh_stdout_handle  0x200095ac     0x4  Data  Lc  iarwstd.o [5]
+__iar_strcmp            0x08006e6d          Code  Gb  strcmp.o [4]
+__iar_ui2d              0x08007123          Code  Gb  I32ToDbl.o [4]
+__iar_zero_init2        0x08007409    0x1a  Code  Gb  zero_init2.o [4]
+__low_level_init        0x080078eb     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000          Data  Gb  startup_stm32f10x_hd.o [1]
+_exit                   0x0800772d          Code  Gb  cexit.o [4]
+_main                   0x0800747f          Code  Gb  cmain.o [4]
+any_local_port          0x200095e4     0x4  Data  Lc  weibo.o [1]
+base64encode            0x080061d1    0xfc  Code  Gb  base64.o [1]
+boundary                0x2000951c    0x40  Data  Gb  httputil.o [1]
+calc_accept_key         0x080034b5   0x100  Code  Gb  websocket.o [1]
+cgi_ipconfig            0x08002eb5    0x5c  Code  Gb  httputil.o [1]
+close                   0x080039c1    0x32  Code  Gb  socket.o [1]
+connect                 0x08003a35   0x108  Code  Gb  socket.o [1]
+counter                 0x200095b4     0x2  Data  Gb  websocket.o [1]
+delay_ms                0x08004cbb    0x2e  Code  Gb  util.o [1]
+delay_us                0x08004c91    0x2a  Code  Gb  util.o [1]
+disconnect              0x08003b3d    0x24  Code  Gb  socket.o [1]
+div                     0x08007639     0xe  Code  Gb  div.o [3]
+do_http                 0x080025a1    0xd8  Code  Gb  httputil.o [1]
+do_websocket_server     0x080035b5   0x324  Code  Gb  websocket.o [1]
+exit                    0x080077bf     0x6  Code  Gb  exit.o [3]
+getGAR                  0x08003211    0x12  Code  Gb  w5500.o [1]
+getIINCHIP_TxMAX        0x08002f45     0xa  Code  Gb  w5500.o [1]
+getSIPR                 0x08003235    0x12  Code  Gb  w5500.o [1]
+getSUBR                 0x08003223    0x12  Code  Gb  w5500.o [1]
+getSn_IR                0x08003279    0x12  Code  Gb  w5500.o [1]
+getSn_RX_RSR            0x08003309    0x6c  Code  Gb  w5500.o [1]
+getSn_SR                0x0800328b    0x12  Code  Gb  w5500.o [1]
+getSn_TX_FSR            0x0800329d    0x6c  Code  Gb  w5500.o [1]
+get_http_param_value    0x08004581    0xe8  Code  Gb  httpd.o [1]
+handshaked              0x200095bb     0x1  Data  Gb  websocket.o [1]
+hour                    0x200095b8     0x1  Data  Gb  main.o [1]
+iic_init                0x080068e5    0x84  Code  Gb  iic.o [1]
+inet_addr_              0x08004e01    0x60  Code  Gb  util.o [1]
+jpg_flag                0x200095ba     0x1  Data  Gb  main.o [1]
+listen                  0x080039f3    0x42  Code  Gb  socket.o [1]
+local_port              0x200095b0     0x2  Data  Lc  socket.o [1]
+main                    0x08006575    0x50  Code  Gb  main.o [1]
+makeDoUpdateCamCallback
+                        0x08002571    0x18  Code  Lc  httputil.o [1]
+makePostWeiboCallback   0x08002589    0x18  Code  Lc  httputil.o [1]
+makeUpdateCamCallback   0x08002559    0x18  Code  Lc  httputil.o [1]
+make_basic_config_setting_json_callback
+                        0x080024c9    0x90  Code  Lc  httputil.o [1]
+make_cgi_response       0x08002f19    0x2c  Code  Gb  httputil.o [1]
+make_http_response_head
+                        0x08004409    0xac  Code  Gb  httpd.o [1]
+memchr                  0x08006c11          Code  Gb  memchr.o [4]
+memcpy                  0x080074b1    0x16  Code  Gb  httputil.o [1]
+memset                  0x0800749b    0x16  Code  Gb  httpd.o [1]
+mid                     0x08004db3    0x4c  Code  Gb  util.o [1]
+min                     0x200095b7     0x1  Data  Gb  main.o [1]
+ms                      0x200095a0     0x4  Data  Gb  main.o [1]
+parse_http_request      0x080044b5    0xcc  Code  Gb  httpd.o [1]
+post_data               0x2000911c   0x400  Data  Gb  weibo.o [1]
+post_weibo_upload       0x08004e61   0x1a0  Code  Gb  weibo.o [1]
+printf                  0x08007371    0x20  Code  Gb  printf.o [3]
+proc_http               0x08002679   0x838  Code  Gb  httputil.o [1]
+putchar                 0x08004ce9    0x20  Code  Gb  util.o [1]
+reboot_flag             0x200095b9     0x1  Data  Gb  main.o [1]
+recv                    0x08003c6d    0x46  Code  Gb  socket.o [1]
+recv_data_processing    0x08003409    0x94  Code  Gb  w5500.o [1]
+replacetochar           0x08004d5b    0x1e  Code  Gb  util.o [1]
+rx_buf                  0x20008b68   0x5b4  Data  Gb  httpd.o [1]
+rxsize                  0x200095d4     0x8  Data  Gb  device.o [1]
+sec                     0x200095b6     0x1  Data  Gb  main.o [1]
+send                    0x08003b61   0x10c  Code  Gb  socket.o [1]
+send_data_processing    0x08003375    0x94  Code  Gb  w5500.o [1]
+setGAR                  0x080031c9    0x12  Code  Gb  w5500.o [1]
+setRCR                  0x08003267    0x12  Code  Gb  w5500.o [1]
+setRTR                  0x08003247    0x20  Code  Gb  w5500.o [1]
+setSHAR                 0x080031ed    0x12  Code  Gb  w5500.o [1]
+setSIPR                 0x080031ff    0x12  Code  Gb  w5500.o [1]
+setSUBR                 0x080031db    0x12  Code  Gb  w5500.o [1]
+setSn_IR                0x0800349d    0x18  Code  Gb  w5500.o [1]
+set_network             0x08005845    0xf8  Code  Gb  device.o [1]
+socket                  0x080038d9    0xe8  Code  Gb  socket.o [1]
+sprintf                 0x0800704d    0x30  Code  Gb  sprintf.o [3]
+strcat                  0x080073b1    0x1e  Code  Gb  strcat.o [3]
+strchr                  0x08007485          Code  Gb  strchr.o [4]
+strcmp                  0x08006e6d          Code  Gb  strcmp.o [4]
+strcpy                  0x08006e29          Code  Gb  strcpy.o [4]
+strcspn                 0x08007229    0x22  Code  Gb  strcspn.o [3]
+strlen                  0x08007015          Code  Gb  strlen.o [4]
+strncpy                 0x08006ad5          Code  Gb  strncpy.o [4]
+strspn                  0x0800724b    0x22  Code  Gb  strspn.o [3]
+strstr                  0x08007629    0x10  Code  Gb  httpd.o [1]
+strtok                  0x08006d11    0x4c  Code  Gb  strtok.o [3]
+sysTick                 0x200095a4     0x4  Data  Gb  main.o [1]
+sysinit                 0x08003095   0x128  Code  Gb  w5500.o [1]
+temp_rh                 0x200095b2     0x2  Data  Gb  websocket.o [1]
+tmp_buf                 0x20007800   0x800  Data  Gb  weibo.o [1]
+tx_buf                  0x200085b4   0x5b4  Data  Gb  httpd.o [1]
+txsize                  0x200095cc     0x8  Data  Gb  device.o [1]
+unescape_http_url       0x080043c5    0x44  Code  Gb  httpd.o [1]
+weibo_server_ip         0x200095e0     0x4  Data  Gb  weibo.o [1]
+wiz_read_buf            0x08003035    0x58  Code  Gb  w5500.o [1]
+wiz_write_buf           0x08002fdb    0x5a  Code  Gb  w5500.o [1]
+wsRxBuf                 0x20007000   0x800  Data  Gb  websocket.o [1]
+wsTxBuf                 0x20006800   0x800  Data  Gb  websocket.o [1]
+
+
+[1] = D:\http_canvas_html5\Debug\Obj
+[2] = command line
+[3] = dl7M_tl_in.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  21 954 bytes of readonly  code memory
+   9 054 bytes of readonly  data memory
+  38 380 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

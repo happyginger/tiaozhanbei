@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1221</ColumnWidth1></Debug-Log>
+      <Build>
+        <ColumnWidth0>20</ColumnWidth0>
+        <ColumnWidth1>915</ColumnWidth1>
+        <ColumnWidth2>244</ColumnWidth2>
+        <ColumnWidth3>61</ColumnWidth3>
+      </Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>117</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        
+        
+        
+      <MixedMode>1</MixedMode><CodeCovShow>0</CodeCovShow><InstrProfShow>0</InstrProfShow></Disassembly>
+      <InterruptLog>
+        <PreferedWindows>
+          <Position>3</Position>
+          <ScreenPosX>0</ScreenPosX>
+          <ScreenPosY>0</ScreenPosY>
+          <Windows/>
+        </PreferedWindows>
+        <Column0>95</Column0>
+        <Column1>105</Column1>
+        <Column2>150</Column2>
+        <Column3>80</Column3>
+        <Column4>150</Column4>
+      </InterruptLog>
+      <ForcedInterrupts>
+        <PreferedWindows>
+          <Position>3</Position>
+          <ScreenPosX>0</ScreenPosX>
+          <ScreenPosY>0</ScreenPosY>
+          <Windows/>
+        </PreferedWindows>
+        <Column0>150</Column0>
+        <Column1>250</Column1>
+      </ForcedInterrupts>
+    </Static>
+    <Windows>
+      
+      
+      
+    <Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-2553-29567</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-2030-29577</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3><Wnd4>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-13301-29571</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>app</ExpandedNode><ExpandedNode>app/Output</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd4><Wnd5>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-24050-29574</Identity>
+            <TabName>Disassembly</TabName>
+            <Factory>Disassembly</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd5></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 5.4\arm\doc\infocenter\index.ENU.html</Filename></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\http_canvas_html5\source\main.c</Filename><XPos>0</XPos><YPos>41</YPos><SelStart>832</SelStart><SelEnd>832</SelEnd></Tab><ActiveTab>1</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>D:\http_canvas_html5\source\websocket.c</Filename><XPos>0</XPos><YPos>173</YPos><SelStart>3046</SelStart><SelEnd>3106</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\http_canvas_html5\source\device.c</Filename><XPos>0</XPos><YPos>138</YPos><SelStart>3955</SelStart><SelEnd>3955</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\http_canvas_html5\source\httpd.c</Filename><XPos>0</XPos><YPos>197</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\http_canvas_html5\source\httputil.c</Filename><XPos>0</XPos><YPos>449</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\http_canvas_html5\source\webpage.c</Filename><XPos>0</XPos><YPos>115</YPos><SelStart>4099</SelStart><SelEnd>4099</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>D:\http_canvas_html5\source\webpage.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01d8e5e0><key>iaridepm.enu1</key></Toolbar-01d8e5e0></Sizes></Row0><Row1><Sizes><Toolbar-0ab36c18><key>debuggergui.enu1</key></Toolbar-0ab36c18></Sizes></Row1></Top><Left><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>479</Bottom><Right>191</Right><x>-2</x><y>-2</y><xscreen>2390</xscreen><yscreen>139</yscreen><sizeHorzCX>1749634</sizeHorzCX><sizeHorzCY>202920</sizeHorzCY><sizeVertCX>141288</sizeVertCX><sizeVertCY>702190</sizeVertCY></Rect></Wnd4></Sizes></Row0></Left><Right><Row0><Sizes><Wnd5><Rect><Top>-2</Top><Left>-2</Left><Bottom>479</Bottom><Right>335</Right><x>-2</x><y>-2</y><xscreen>2390</xscreen><yscreen>139</yscreen><sizeHorzCX>1749634</sizeHorzCX><sizeHorzCY>202920</sizeHorzCY><sizeVertCX>246706</sizeVertCX><sizeVertCY>702190</sizeVertCY></Rect></Wnd5></Sizes></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>137</Bottom><Right>1368</Right><x>-2</x><y>-2</y><xscreen>1370</xscreen><yscreen>139</yscreen><sizeHorzCX>1002928</sizeHorzCX><sizeHorzCY>202920</sizeHorzCY><sizeVertCX>1749634</sizeVertCX><sizeVertCY>202920</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

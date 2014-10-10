@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=1932328278
+Checksum=609222020
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -37,6 +37,10 @@ A1=_ "D:\安装程序\项目程序\http_camera_html5\source\main.c" ""
 A2=_ "D:\安装程序\项目程序\http_camera_html5\source\stm32f10x_it.c" ""
 Count=3
 SuppressDialog=0
+[Disassemble mode]
+mode=0
+[Breakpoints]
+Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -48,7 +52,3 @@ LogFile=_ ""
 Enabled=0
 Source=2
 Graph=0
-[Disassemble mode]
-mode=0
-[Breakpoints]
-Count=0

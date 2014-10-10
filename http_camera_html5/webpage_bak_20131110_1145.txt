@@ -1,0 +1,99 @@
+__root const char INDEX_HTML[] ="<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>"\
+"<html>"\
+"<head>"\
+"<title>Firmware update via HTTP</title>"\
+"<style>"\
+"#body{width:760px; position:relative;margin:0 auto; text-align:center;}"\
+"#body h3{font-size:x-large; font-weight:600;}"\
+".filter-drop-shadow {"\
+"-webkit-filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));"\
+"-moz-filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));"\
+"-ms-filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));"\
+"-o-filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));"\
+"filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));"\
+"}"\
+".img{margin:0 auto; display:block;margin-bottom:10px; width:640px;height:480px;cursor:pointer;}"\
+"</style>"\
+"<script>"\
+"var timer_is_on = 0;"\
+"var t_update;"\
+"function AJAX(url, callback){"\
+"var req = AJAX_init();"\
+"req.onreadystatechange = AJAX_processRequest;"\
+"function AJAX_init() {"\
+"if (window.XMLHttpRequest) {"\
+"return new XMLHttpRequest();"\
+"} else if (window.ActiveXObject) {"\
+"return new ActiveXObject('Microsoft.XMLHTTP');"\
+"}"\
+"};"\
+"function AJAX_processRequest() {"\
+"if(req.readyState == 4) {"\
+"if(req.status == 200) {"\
+"if(callback)"\
+"callback(req.responseText);"\
+"}"\
+"}"\
+"};"\
+"this.doGet = function() {"\
+"req.open('GET', url, true);"\
+"req.send(null);"\
+"};"\
+"this.doPost = function(body) {"\
+"req.open('POST', url, true);"\
+"req.setRequestHeader('Content-Type',"\
+"'application/x-www-form-urlencoded');"\
+"req.setRequestHeader('ISAJAX','yes');"\
+"req.send(body);"\
+"};"\
+"};"\
+"function updateCamCallback(o) {"\
+"obj=document.getElementById('cam');"\
+"obj.width=640;obj.height=480;obj.src=o;"\
+"}"\
+"function updateCam(){"\
+"var oUpdate;"\
+"setTimeout(function () {"\
+"oUpdate = document.getElementById('cam');"\
+"oUpdate.src='camera.jpg';},10);"\
+"t_update=setTimeout('updateCam()',40);"\
+"}"\
+"function doUpdateCallback(o){"\
+"if(o){"\
+"if(o['camera']=='1'){"\
+"timer_is_on=1;"\
+"updateCam();"\
+"}else if(o['camera']=='0'){"\
+"clearTimeout(t_update);"\
+"timer_is_on=0;"\
+"}"\
+"}"\
+"}"\
+"function doUpdate(){"\
+"var oAjax;"\
+"var val;"\
+"if (!timer_is_on) {"\
+"val='1';"\
+"} else {"\
+"val='0';"\
+"}"\
+  "setTimeout(function(){oAjax=new AJAX('camera.cgi',function(t){try{eval(t);}catch(e){alert(e);}});"\
+"oAjax.doPost('camera='+val);},10);"\
+"}"\
+"</script>"\
+"</head>"\
+"<body>"\
+"<div id='body'>"\
+"<h3>发微博，赢最新开发板！</h3>"\
+"<p><img  class='img filter-drop-shadow' id='cam' src='test.jpg' onclick='doUpdate()'/></p>"\
+"<form>"\
+"<p style='text-align:left;'>说点什么吧</p>"\
+"<textarea id='txt' name='weibo' style='font-size:large;' rows='4' cols='76'></textarea>"\
+"<p><input type='button' style='line-height:200%; font-size:x-large' name='btnCapture' value='发微博'/></p>"\
+"</form>"\
+"<div style='margin:5px 5px;'>"\
+"&copy;Copyright 1998-2013 by WIZnet Team"\
+"</div>"\
+"</div> "\
+"</body>"\
+"</html>";

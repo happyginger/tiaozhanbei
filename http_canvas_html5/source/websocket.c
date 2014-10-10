@@ -91,6 +91,7 @@ void do_websocket_server(SOCKET s)
               temp[6]=temp_rh[1]%10+0x30;
               send(s, temp, 7);
               counter =0;
+             // printf("%s\n",temp);
             }
          }
         }

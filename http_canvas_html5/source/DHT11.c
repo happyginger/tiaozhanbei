@@ -43,6 +43,7 @@ uint8 DHT11_GetValue(uint8 *p)
       GPIO_SetBits(GPIOA,PA12);     
       if(temp==(p[0]+p[1]+temp1+temp2))	
       {
+        printf("%d\n",p[1]);
 	return 1;
       }
     }

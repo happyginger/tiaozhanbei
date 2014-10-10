@@ -2,7 +2,7 @@ __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "<html>"\
 "<head>"\
 "<meta charset='gb2312' />"\
-"<title>Wiznet 2014</title>"\
+"<title>挑战杯作品</title>"\
 "<style>"\
 "#graph {"\
 "border: 1px solid #03F;"\
@@ -15,7 +15,7 @@ __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "h1 {margin: 0 auto;text-align:center;}"\
 "</style>"\
 "<script>"\
-"var arryTH = new Array(2);"\
+"var arrayTH = new Array(2);"\
 "var preTPosX,preTPosY,preHPosX,preHPosY;"\
 "var timeCounter = 0;"\
 "var canvas;"\
@@ -79,7 +79,7 @@ __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "context.save();"\
 "context.translate(chartMargin+10, chartHeight/2);"\
 "context.rotate(Math.PI*-90/180);"\
-"context.fillText('温度(/ ℃)',0,0);"\
+"context.fillText('湿度(/ %)',0,0);"\
 "context.restore();"\
 "context2.lineWidth = 2;"\
 "context2.strokeStyle = '#999';"\
@@ -109,7 +109,7 @@ __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "context2.save();"\
 "context2.translate(chartMargin+10, chartHeight/2);"\
 "context2.rotate(Math.PI*-90/180);"\
-"context2.fillText('湿度(/ %)',0,0);"\
+"context2.fillText('温度(/ ℃)',0,0);"\
 "context2.restore();"\
 "};"\
 "var sensorWebSocket = null;"\
@@ -191,7 +191,7 @@ __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "</script>"\
 "</head>"\
 "<body>"\
-"<h1>温湿度监测演示系统</h1>"\
+"<h1>基于网络的温湿度监测系统</h1>"\
 "<canvas id='graph' width='600' height='400'>"\
 "The Canvas HTML5 element is not supported by your browser."\
 "Please run this page in a different browser."\
@@ -203,7 +203,7 @@ __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "<div id='wsState'></div>"\
 "<div id='messages'></div>"\
 "<div style='margin:5px 5px;text-align:center'>"\
-"&copy;Copyright 1998-2013 by WIZnet Team"\
+"&copy;Copyright 2014-2015 by Dream Team"\
 "</div>"\
 "</body>"\
 "</html>";

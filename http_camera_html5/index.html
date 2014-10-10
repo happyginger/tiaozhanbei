@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+<head>
+<meta http-equiv='content-type' content='text/html; charset=gb2312' />
+<title>Firmware update via HTTP</title>
+<style>
+body{font-family:'宋体',Arial;}
+p{margin-top:5px;margin-bottom:5px;}
+#body{width:760px; position:relative;margin:0 auto; text-align:center;}
+#body h3{font-size:x-large; font-weight:600;}
+.filter-drop-shadow {
+-webkit-filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));
+-moz-filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));
+-ms-filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));
+-o-filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));
+filter: drop-shadow(0 1px 15px rgba(0,0,0,.8));
+}
+.img{margin:0 auto; display:block;margin-bottom:10px; width:640px;height:480px;cursor:pointer;}
+</style>
+<script>
+var timer_is_on = 0;
+var t_update;
+function $(o) {return (document.getElementById(o));}
+function AJAX(url, callback){
+var req = AJAX_init();
+req.onreadystatechange = AJAX_processRequest;
+function AJAX_init() {
+if (window.XMLHttpRequest) {
+return new XMLHttpRequest();
+} else if (window.ActiveXObject) {
+return new ActiveXObject('Microsoft.XMLHTTP');
+}
+};
+function AJAX_processRequest() {
+if(req.readyState == 4) {
+if(req.status == 200) {
+if(callback)
+callback(req.responseText);
+}
+}
+};
+this.doGet = function() {
+req.open('GET', url, true);
+req.send(null);
+};
+this.doPost = function(body) {
+req.open('POST', url, true);
+req.setRequestHeader('Content-Type',
+'application/x-www-form-urlencoded');
+req.setRequestHeader('ISAJAX','yes');
+req.send(body);
+};
+};
+function updateCamCallback(o) {
+obj=$('cam');
+obj.width=640;obj.height=480;obj.src=o;
+}
+function updateCam(){
+var oUpdate=$('cam');
+t_update=setTimeout(function () {
+oUpdate.src='camera.jpg';},10);
+t_update=setTimeout('updateCam()',20);
+}
+function doUpdateCallback(o){
+if(o){
+if(o['camera']=='1'){
+timer_is_on=1;
+updateCam();
+}else if(o['camera']=='0'){
+clearTimeout(t_update);
+timer_is_on=0;
+}
+}
+}
+function doUpdate(){
+var oAjax;
+var val;
+if (!timer_is_on) {
+val='1';
+} else {
+val='0';
+}
+setTimeout(function(){oAjax=new AJAX('camera.cgi',function(t){try{eval(t);}catch(e){alert(e);}});
+oAjax.doPost('camera='+val);},10);
+}
+function showWeiboLogin() {
+var o = $('weiboLogin');
+var oWeibo = $('txtWeibo');
+if (o.style.display == 'block') { o.style.display = 'none'; oWeibo.value = '#智能硬件#'; oWeibo.focus(); }
+else { o.style.display = 'block'; $('txtWeiboId').focus(); oWeibo.value = '#W5500抽奖#@wiznet'; }
+}
+function postWeibo() {
+var id = $('txtWeiboId').value;
+var pwd = $('txtWeiboPwd').value;
+var weibo = $('txtWeibo').value;
+var oPost;
+setTimeout(function () {
+oPost = new AJAX('postweibo.cgi', function (t) { try { eval(t); } catch (e) { alert(e); } });
+oPost.doPost('id=' + id + '&pwd=' + pwd + '&weibo=' + encodeURI(encodeURI(weibo)));}, 10);
+}
+function postWeiboCallback(o) {
+var obj = $('lblMsg');
+if(o['post']=='1'){obj.innerHTML = '谢谢您的支持，获奖信息将在我们的官方微博公布。敬请关注！';$('txtWeiboId').value='';$('txtWeiboPwd').value='';$('txtWeibo').value='#W5500抽奖#@wiznet';}
+else{obj.innerHTML = '发送失败！请再试一次。';$('txtWeiboId').value='';$('txtWeiboPwd').value='';$('txtWeibo').value='#W5500抽奖#@wiznet';}
+};
+</script>
+</head>
+<body>
+<div id='body'>
+<h3>发微博，赢最新开发板！</h3>
+<p><canvas  class='img filter-drop-shadow' id='cam' title='摆好姿势，轻击画面完成拍照！' alt='W5500照相机'></canvas></p>
+<div id='output'></div>
+<script type="text/javascript">
+var wsServer = 'ws://192.168.1.102:1818/camera'; /*服务器地址*/
+var canvas = document.getElementById('cam');
+var context = canvas.getContext('2d');
+var websocket = new WebSocket(wsServer); /*创建WebSocket对象*/
+websocket.onopen = function (evt) {
+    writeToScreen('已经建立连接');
+};
+websocket.onclose = function (evt) {
+writeToScreen('连接关闭');
+};
+websocket.onerror = function (evt) {
+writeToScreen('哎呦，出错啦！');
+};
+websocket.onmessage = function (evt) {
+/*收到服务器消息，使用evt.data提取*/
+var image = new Image();
+image.onload = function () {
+context.clearRect(0, 0,canvas.width, canvas.height);
+context.drawImage(image, 0, 0, canvas.width, canvas.height);
+}
+image.src = URL.createObjectURL(evt.data);
+};
+websocket.onerror = function (evt) {
+writeToScreen(evt.message);
+};
+function sendMsg() {
+if (websocket.readyState == websocket.OPEN) {
+msg = document.getElementById('msg').value;
+websocket.send(msg);
+writeToScreen('发送成功!');
+} else {
+writeToScreen('连接失败!');
+}
+}
+function writeToScreen(message) {
+var pre = document.createElement('p');
+pre.style.wordWrap = 'break-word';
+pre.innerHTML += message;
+var output =document.getElementById('output');
+output.appendChild(pre);
+}
+</script>
+<div style='text-align:left; margin-left:60px;'>
+<p>说点什么吧，用自己的微博账号并@wiznet发出去可以参与抽奖哦！<a href='javascript:;' onclick='showWeiboLogin();'>我要抽奖！</a></p>
+<p style='display:none;' id='weiboLogin'>新浪微博用户名：<input type='text' id='txtWeiboId' style='margin-right:10px;' />密码：<input type='password' id='txtWeiboPwd' /> </p>
+<label id='lblMsg' style='color:Red; display:block;'></label>
+<p><textarea id='txtWeibo' name='weibo' style='font-size:large;' rows='4' cols='76'></textarea></p>
+<p style='text-align:center; margin-top:5px;'><input type='button' style='line-height:200%; font-size:x-large' name='btnCapture' onclick='postWeibo();'  value='发微博'/></p>
+</div>
+<div style='margin:5px 5px;'>
+&copy;Copyright 1998-2013 by WIZnet Team
+</div>
+</div>
+</body>
+</html>

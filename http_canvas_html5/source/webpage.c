@@ -1,3 +1,40 @@
+__root const char PASSWD_HTML[] ="<!DOCTYPE html>"\
+"<html>"\
+"<head>"\
+"<meta http-equiv='Content-Type' content='text/html; charset=gb2312' />"\
+"<title>挑战杯作品</title>"\
+"</head>"\
+"<body>"\
+"<center><h1>基于网络的温湿度监测系统</h1>"\
+"<form action='' method='get' name='invest' enctype='text/plain'>"\
+"姓名：<input type='text' name='username' size='20' /><br /><br/>"\
+"密码：<input type='password' name='password' size='20' maxlength='8' /><br /><br/>"\
+"<input type='submit' name='submit' value='提交表单' />"\
+"</form>"\
+"<div style='margin:5px 5px;text-align:center'>"\
+"&copy;Copyright 2014-2015 by Dream Team"\
+"</body>"\
+"</html>";
+
+__root const char PASSWD_ERROR_HTML[] ="<!DOCTYPE html>"\
+"<html>"\
+"<head>"\
+"<meta http-equiv='Content-Type' content='text/html; charset=gb2312' />"\
+"<title>挑战杯作品</title>"\
+"</head>"\
+"<body>"\
+"<center><h1>基于网络的温湿度监测系统</h1>"\
+"<form action='' method='get' name='invest' enctype='text/plain'>"\
+"姓名：<input type='text' name='username' size='20' /><br /><br/>"\
+"密码：<input type='password' name='password' size='20' maxlength='8' /><br /><br/>"\
+"<input type='submit' name='submit' value='提交表单' />"\
+"</form>"\
+ "<font face='隶书'size='+1'color='#66FF66'>用户名或密码错误，请重新输入！</font><br />"\
+ "<div style='margin:5px 5px;text-align:center'>"\
+"&copy;Copyright 2014-2015 by Dream Team"\
+"</body>"\
+"</html>";
+
 __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "<html>"\
 "<head>"\

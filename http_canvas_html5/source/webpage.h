@@ -3,6 +3,6 @@
 
 
 extern const char INDEX_HTML[];
-
-
+extern const char PASSWD_HTML[];
+extern const char PASSWD_ERROR_HTML[];
 #endif

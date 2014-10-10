@@ -20,6 +20,7 @@ extern uint8 jpg_requested;
 extern uint8 jpg_flag;
 extern uint8 JPEGBuffer[];
 extern uint32 JPEGCnt;
+extern uint8 passwd_flag=0;
 
 uint8 boundary[64];
 //uint8 tmp_buf[1460]={0xff,};
@@ -135,6 +136,32 @@ void proc_http(SOCKET s, uint8 * buf)
 
       if(strcmp(name,"/index.htm")==0 || strcmp(name,"/")==0 || (strcmp(name,"/index.html")==0))
       {
+        file_len = strlen(PASSWD_HTML);
+        make_http_response_head((uint8*)http_response, PTYPE_HTML,file_len);
+        send(s,http_response,strlen((char const*)http_response));
+        send_len=0;
+        while(file_len)
+        {
+          if(file_len>1024)
+          {
+            if(getSn_SR(s)!=SOCK_ESTABLISHED)
+            {
+              return;
+            }
+            send(s, (uint8 *)PASSWD_HTML+send_len, 1024);
+            send_len+=1024;
+            file_len-=1024;
+          }
+          else
+          {
+            send(s, (uint8 *)PASSWD_HTML+send_len, file_len);
+            send_len+=file_len;
+            file_len-=file_len;
+          } 
+        }
+      }
+      else if(strcmp(name,"/?username=12&password=34&submit=%CC%E1%BD%BB%B1%ED%B5%A5")==0)
+      {
         file_len = strlen(INDEX_HTML);
         make_http_response_head((uint8*)http_response, PTYPE_HTML,file_len);
         send(s,http_response,strlen((char const*)http_response));
@@ -154,6 +181,32 @@ void proc_http(SOCKET s, uint8 * buf)
           else
           {
             send(s, (uint8 *)INDEX_HTML+send_len, file_len);
+            send_len+=file_len;
+            file_len-=file_len;
+          } 
+        }
+      }
+      else if(strcmp(name,"/?username=12&password=34&submit=%CC%E1%BD%BB%B1%ED%B5%A5"))
+      {
+        file_len = strlen(PASSWD_ERROR_HTML);
+        make_http_response_head((uint8*)http_response, PTYPE_HTML,file_len);
+        send(s,http_response,strlen((char const*)http_response));
+        send_len=0;
+        while(file_len)
+        {
+          if(file_len>1024)
+          {
+            if(getSn_SR(s)!=SOCK_ESTABLISHED)
+            {
+              return;
+            }
+            send(s, (uint8 *)PASSWD_ERROR_HTML+send_len, 1024);
+            send_len+=1024;
+            file_len-=1024;
+          }
+          else
+          {
+            send(s, (uint8 *)PASSWD_ERROR_HTML+send_len, file_len);
             send_len+=file_len;
             file_len-=file_len;
           } 

@@ -1,8 +1,45 @@
+__root const char PASSWD_HTML[] ="<!DOCTYPE html>"\
+"<html>"\
+"<head>"\
+"<meta http-equiv='Content-Type' content='text/html; charset=gb2312' />"\
+"<title>挑战杯作品</title>"\
+"</head>"\
+"<body>"\
+"<center><h1>基于网络的温湿度监测系统</h1>"\
+"<form action='' method='get' name='invest' enctype='text/plain'>"\
+"姓名：<input type='text' name='username' size='20' /><br /><br/>"\
+"密码：<input type='password' name='password' size='20' maxlength='8' /><br /><br/>"\
+"<input type='submit' name='submit' value='提交表单' />"\
+"</form>"\
+"<div style='margin:5px 5px;text-align:center'>"\
+"&copy;Copyright 2014-2015 by Dream Team"\
+"</body>"\
+"</html>";
+
+__root const char PASSWD_ERROR_HTML[] ="<!DOCTYPE html>"\
+"<html>"\
+"<head>"\
+"<meta http-equiv='Content-Type' content='text/html; charset=gb2312' />"\
+"<title>挑战杯作品</title>"\
+"</head>"\
+"<body>"\
+"<center><h1>基于网络的温湿度监测系统</h1>"\
+"<form action='' method='get' name='invest' enctype='text/plain'>"\
+"姓名：<input type='text' name='username' size='20' /><br /><br/>"\
+"密码：<input type='password' name='password' size='20' maxlength='8' /><br /><br/>"\
+"<input type='submit' name='submit' value='提交表单' />"\
+"</form>"\
+ "<font face='隶书'size='+1'color='#66FF66'>用户名或密码错误，请重新输入！</font><br />"\
+ "<div style='margin:5px 5px;text-align:center'>"\
+"&copy;Copyright 2014-2015 by Dream Team"\
+"</body>"\
+"</html>";
+
 __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "<html>"\
 "<head>"\
 "<meta charset='gb2312' />"\
-"<title>Wiznet 2014</title>"\
+"<title>挑战杯作品</title>"\
 "<style>"\
 "#graph {"\
 "border: 1px solid #03F;"\
@@ -191,7 +228,7 @@ __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "</script>"\
 "</head>"\
 "<body>"\
-"<h1>温湿度监测演示系统</h1>"\
+"<h1>基于网络的温湿度监测系统</h1>"\
 "<canvas id='graph' width='600' height='400'>"\
 "The Canvas HTML5 element is not supported by your browser."\
 "Please run this page in a different browser."\
@@ -203,7 +240,7 @@ __root const char INDEX_HTML[] ="<!DOCTYPE html>"\
 "<div id='wsState'></div>"\
 "<div id='messages'></div>"\
 "<div style='margin:5px 5px;text-align:center'>"\
-"&copy;Copyright 1998-2013 by WIZnet Team"\
+"&copy;Copyright 2014-2015 by Dream Team"\
 "</div>"\
 "</body>"\
 "</html>";
